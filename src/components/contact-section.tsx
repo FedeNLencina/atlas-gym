@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 export function ContactSection() {
   return (
     <section className="py-24 bg-gradient-to-b from-black to-red-950/30 relative overflow-hidden">
@@ -71,7 +71,8 @@ export function ContactSection() {
           {/* Map Section */}
           <div className="rounded-2xl overflow-hidden border border-red-600/30 group hover:border-red-600/60 transition-all duration-300 h-full min-h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0176919283316!2d-58.38158!3d-34.60373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacb7c91c543%3A0x1234567890ab!2sAtlas%20Gym!5e0!3m2!1ses!2sar!4v1234567890"
+              title='Atlas Gym'
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=AtlasGym%202752,%20B1613%20Los%20Polvorines,%20Provincia%20de%20Buenos%20Aires+(Atlas%20Gym)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -81,6 +82,8 @@ export function ContactSection() {
             />
           </div>
         </div>
+        
+        
 
         {/* CTA Section */}
         <div className="text-center">

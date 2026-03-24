@@ -3,7 +3,13 @@ import { Hero } from "../components/hero"
 import { Disciplinas } from "../components/disciplinas"
 import { Footer } from "../components/footer"
 
+import { useEffect } from 'react';
+
 export function Home() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <Navbar />

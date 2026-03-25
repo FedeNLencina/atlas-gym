@@ -3,6 +3,7 @@
 
 import { Dumbbell, Users, Heart, Wind } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const disciplinas = [
   {
@@ -41,6 +42,7 @@ const disciplinas = [
 
 export function Disciplinas() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section id="disciplinas" className="py-24 bg-black relative overflow-hidden">
@@ -109,7 +111,9 @@ export function Disciplinas() {
                     </p>
 
                     {/* Learn More Button */}
-                    <button className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+                    <button 
+                      onClick={() => navigate('/disciplinas')}
+                      className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
                       Conocer Más →
                     </button>
                   </div>

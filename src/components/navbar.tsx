@@ -9,7 +9,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: 'Inicio', href: '/' },
-    { name: 'Disciplinas', href: '#disciplinas' },
+    { name: 'Disciplinas', href: '/disciplinas' },
     { name: 'Contacto', href: '/contacto' },
   ];
 

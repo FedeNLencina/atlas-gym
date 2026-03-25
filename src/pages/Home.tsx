@@ -1,6 +1,7 @@
 import { Navbar } from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Disciplinas } from "../components/disciplinas"
+import { InstagramFeed } from "../components/instagram-feed"
 import { Footer } from "../components/footer"
 
 import { useEffect } from 'react';
@@ -15,6 +16,7 @@ export function Home() {
       <Navbar />
       <Hero />
       <Disciplinas />
+      <InstagramFeed />
       <Footer />
     </main>
   )

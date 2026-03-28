@@ -5,6 +5,10 @@ import { Dumbbell, Users, Heart, Wind } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import musculacionImg from '../assets/musculacion.jpg';
+import gluteosImg from '../assets/gluteos.jpg';
+import stretchingImg from '../assets/stretching.jpg';
+
 const disciplinas = [
   {
     id: 1,
@@ -12,7 +16,7 @@ const disciplinas = [
     description: 'Construye músculo con técnica profesional. Equipamiento completo de pesas, barras y máquinas para todos los niveles.',
     icon: Dumbbell,
     color: 'from-red-600 to-red-500',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260213_081753993_AE-GtjmMYkH4nyL5DAWWT8ZUq7mxSxe3V.jpg',
+    image: musculacionImg,
   },
   {
     id: 2,
@@ -20,7 +24,7 @@ const disciplinas = [
     description: 'Ejercicios de peso corporal con resultados excepcionales. Domina tu propio cuerpo y alcanza nuevos niveles de control.',
     icon: Users,
     color: 'from-red-700 to-red-600',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260213_081753993_AE-GtjmMYkH4nyL5DAWWT8ZUq7mxSxe3V.jpg',
+    image: musculacionImg,
   },
   {
     id: 3,
@@ -28,7 +32,7 @@ const disciplinas = [
     description: 'Programas específicos para tonificar y fortalecer. Clases dinámicas con música motivadora dirigidas por expertos.',
     icon: Heart,
     color: 'from-red-600 to-orange-500',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260220_070803824_AE-6Dxcprlu78HdUOnQ6qfFLo8vaJINDl.jpg',
+    image: gluteosImg,
   },
   {
     id: 4,
@@ -36,7 +40,7 @@ const disciplinas = [
     description: 'Recuperación y flexibilidad. Sesiones dedicadas a mejorar tu rango de movimiento y prevenir lesiones.',
     icon: Wind,
     color: 'from-red-700 to-red-600',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260209_073755251_AE-J19P7O3JoGJF6YttRt9746Rkr4ARnU.jpg',
+    image: stretchingImg,
   },
 ];
 
@@ -81,7 +85,7 @@ export function Disciplinas() {
                   <img
                     src={disciplina.image}
                     alt={disciplina.name}
-                    style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     className="transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
@@ -104,14 +108,14 @@ export function Disciplinas() {
                     <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
                       {disciplina.name}
                     </h3>
-                    
+
                     {/* Description - Appears on Hover */}
                     <p className={`text-white text-sm leading-relaxed transition-all duration-500 line-clamp-2 ${isHovered ? 'opacity-100 line-clamp-none' : 'opacity-80'}`}>
                       {disciplina.description}
                     </p>
 
                     {/* Learn More Button */}
-                    <button 
+                    <button
                       onClick={() => navigate('/disciplinas')}
                       className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
                       Conocer Más →

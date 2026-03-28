@@ -4,6 +4,11 @@ import { Dumbbell, Users, Heart, Wind } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 
+import musculacionImg from '../assets/musculacion.jpg';
+import gluteosImg from '../assets/gluteos.jpg';
+import stretchingImg from '../assets/stretching.jpg';
+
+
 const disciplinasData = [
   {
     id: 1,
@@ -11,7 +16,7 @@ const disciplinasData = [
     description: 'Construye músculo con técnica profesional. Equipamiento completo de pesas, barras y máquinas para todos los niveles.',
     icon: Dumbbell,
     color: 'from-red-600 to-red-500',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260213_081753993_AE-GtjmMYkH4nyL5DAWWT8ZUq7mxSxe3V.jpg',
+    image: musculacionImg,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -20,7 +25,7 @@ const disciplinasData = [
     description: 'Ejercicios de peso corporal con resultados excepcionales. Domina tu propio cuerpo y alcanza nuevos niveles de control.',
     icon: Users,
     color: 'from-red-700 to-red-600',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260213_081753993_AE-GtjmMYkH4nyL5DAWWT8ZUq7mxSxe3V.jpg',
+    image: musculacionImg,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -29,7 +34,7 @@ const disciplinasData = [
     description: 'Programas específicos para tonificar y fortalecer. Clases dinámicas con música motivadora dirigidas por expertos.',
     icon: Heart,
     color: 'from-red-600 to-orange-500',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260220_070803824_AE-6Dxcprlu78HdUOnQ6qfFLo8vaJINDl.jpg',
+    image: gluteosImg,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -38,7 +43,7 @@ const disciplinasData = [
     description: 'Recuperación y flexibilidad. Sesiones dedicadas a mejorar tu rango de movimiento y prevenir lesiones.',
     icon: Wind,
     color: 'from-red-700 to-red-600',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260209_073755251_AE-J19P7O3JoGJF6YttRt9746Rkr4ARnU.jpg',
+    image: stretchingImg,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];

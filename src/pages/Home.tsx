@@ -1,6 +1,7 @@
 import { Navbar } from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Disciplinas } from "../components/disciplinas"
+import { NuestroEspacio, Mentalidad, Comunidad } from "../components/landing-sections"
 import { InstagramFeed } from "../components/instagram-feed"
 import { Footer } from "../components/footer"
 
@@ -16,6 +17,9 @@ export function Home() {
       <Navbar />
       <Hero />
       <Disciplinas />
+      <NuestroEspacio />
+      <Mentalidad />
+      <Comunidad />
       <InstagramFeed />
       <Footer />
     </main>

@@ -1,5 +1,6 @@
 import { Navbar } from "../components/navbar"
 import { Footer } from "../components/footer"
+import { Link } from "react-router-dom"
 
 export function Info() {
   return (
@@ -36,9 +37,9 @@ export function Info() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href="/contacto" className="inline-block px-8 py-3 font-bold text-black bg-red-500 hover:bg-red-600 rounded-lg transition-colors">
+            <Link to="/contacto" className="inline-block px-8 py-3 font-bold text-black bg-red-500 hover:bg-red-600 rounded-lg transition-colors">
               Solicitar más información
-            </a>
+            </Link>
           </div>
         </div>
       </section>

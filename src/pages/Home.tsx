@@ -1,7 +1,7 @@
 import { Navbar } from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Disciplinas } from "../components/disciplinas"
-import { NuestroEspacio, Mentalidad, Comunidad } from "../components/landing-sections"
+import { NuestroEspacio, Mentalidad, Comunidad, EntrenamientoPersonalizado } from "../components/landing-sections"
 import { InstagramFeed } from "../components/instagram-feed"
 import { Footer } from "../components/footer"
 
@@ -18,6 +18,7 @@ export function Home() {
       <Hero />
       <Disciplinas />
       <NuestroEspacio />
+      <EntrenamientoPersonalizado />
       <Mentalidad />
       <Comunidad />
       <InstagramFeed />

@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Dumbbell, Users, Zap } from 'lucide-react';
+import { Dumbbell, Users, Zap, Check } from 'lucide-react';
 
 import espacioImg from '../assets/HeroImage1.png';   // Calistenia — amplia sala roja
 import motivacionImg from '../assets/HeroImage2.png'; // PUSH bench — dramática oscura
 import comunitadImg from '../assets/Screenshot_44.png';  // Pull-ups exterior — acción real
+import videoPersonalizado from '../assets/videoLanding.mp4';
 
 /* ─── Reusable hook: detects when element enters the viewport ─── */
 function useInView(threshold = 0.2) {
@@ -321,6 +322,112 @@ export function Comunidad() {
               className="px-8 py-4 border-2 border-white/20 text-white font-bold text-lg rounded-lg hover:border-red-600/50 hover:bg-white/5 transition-all duration-300 uppercase tracking-wider text-center"
             >
               Ver Disciplinas
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 4: Entrenamiento Personalizado ─── */
+export function EntrenamientoPersonalizado() {
+  const { ref, inView } = useInView(0.15);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 9;
+    }
+  }, []);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.currentTime < 9) {
+      videoRef.current.currentTime = 9;
+    }
+  };
+
+  return (
+    <section ref={ref} className="relative py-24 bg-black overflow-hidden border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          {/* Left: Video */}
+          <div 
+            className="w-full lg:w-1/2 transition-all duration-700"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? 'translateX(0)' : 'translateX(-40px)',
+              transitionDelay: '0.2s',
+            }}
+          >
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-red-950/20 border border-white/5 aspect-[4/5] lg:aspect-[4/4.5]">
+              <video 
+                ref={videoRef}
+                src={videoPersonalizado} 
+                className="w-full h-full object-cover"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                preload="auto"
+                onTimeUpdate={handleTimeUpdate}
+                style={{
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden'
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            </div>
+          </div>
+
+          {/* Right: Content */}
+          <div 
+            className="w-full lg:w-1/2 transition-all duration-700"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? 'translateX(0)' : 'translateX(40px)',
+              transitionDelay: '0.4s',
+            }}
+          >
+            <div className="mb-4">
+              <span className="text-red-500 font-bold uppercase tracking-widest text-sm">
+                La Solución
+              </span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              Entrenamiento que se adapta a vos
+            </h2>
+            
+            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              Ningún cuerpo es igual. Cada cliente recibe un plan completamente personalizado basado en sus objetivos únicos, horarios y preferencias. Esta no es una rutina genérica — es tu mapa personal hacia la transformación.
+            </p>
+
+            <ul className="space-y-5 mb-10">
+              {[
+                'Planes de entrenamiento personalizados que se adaptan a tu progreso.',
+                'Guía de nutrición flexible — sin dietas restrictivas.',
+                'Llamadas de seguimiento uno a uno para mantener tu disciplina.',
+                'Soporte 24/7 a través de nuestro equipo.',
+                'Métodos respaldados por la ciencia que garantizan resultados a largo plazo.'
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-600/20 flex items-center justify-center mt-0.5">
+                    <Check size={14} className="text-red-500" />
+                  </div>
+                  <span className="text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              to="/contacto"
+              className="inline-flex px-8 py-4 bg-black border-2 border-transparent text-white font-bold text-lg rounded-xl hover:bg-neutral-900 transition-all duration-300 shadow-xl hover:shadow-red-900/20"
+              style={{
+                background: 'linear-gradient(black, black) padding-box, linear-gradient(to right, #dc2626, #ef4444) border-box',
+              }}
+            >
+              Comenzá Hoy
             </Link>
           </div>
         </div>

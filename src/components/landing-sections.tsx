@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell, Users, Zap } from 'lucide-react';
 
-import espacioImg from '../assets/Screenshot_33.png';   // Calistenia — amplia sala roja
-import motivacionImg from '../assets/Screenshot_35.png'; // PUSH bench — dramática oscura
+import espacioImg from '../assets/HeroImage1.png';   // Calistenia — amplia sala roja
+import motivacionImg from '../assets/HeroImage2.png'; // PUSH bench — dramática oscura
 import comunitadImg from '../assets/Screenshot_44.png';  // Pull-ups exterior — acción real
 
 /* ─── Reusable hook: detects when element enters the viewport ─── */

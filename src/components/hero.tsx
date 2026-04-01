@@ -31,7 +31,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Gimnasio especializado con equipamiento de clase mundial. Musculación, calistenia, clases de glúteos y stretching. Entrena con los mejores.
+          Gimnasio especializado con equipamiento de gran calidad. Musculación, calistenia, clases de glúteos y stretching. Entrena con los mejores.
         </p>
 
         {/* CTA Button */}

@@ -91,27 +91,6 @@ export function NuestroEspacio() {
           >
             Equipamiento profesional, estructura roja de calistenia, racks de sentadilla, área de pesas libres y mucho más. Todo pensado para que puedas entrenar sin límites.
           </p>
-
-          {/* Stats row */}
-          <div
-            className="grid grid-cols-3 gap-6 transition-all duration-700"
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? 'translateY(0)' : 'translateY(30px)',
-              transitionDelay: '0.5s',
-            }}
-          >
-            {[
-              { value: '200m²', label: 'de instalaciones' },
-              { value: '4', label: 'disciplinas' },
-              { value: '100%', label: 'equipado' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold text-red-500">{stat.value}</div>
-                <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right: decorative card */}
@@ -352,7 +331,7 @@ export function EntrenamientoPersonalizado() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Left: Video */}
-          <div 
+          <div
             className="w-full lg:w-1/2 transition-all duration-700"
             style={{
               opacity: inView ? 1 : 0,
@@ -361,13 +340,13 @@ export function EntrenamientoPersonalizado() {
             }}
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-red-950/20 border border-white/5 aspect-[4/5] lg:aspect-[4/4.5]">
-              <video 
+              <video
                 ref={videoRef}
-                src={videoPersonalizado} 
+                src={videoPersonalizado}
                 className="w-full h-full object-cover"
-                autoPlay 
-                loop 
-                muted 
+                autoPlay
+                loop
+                muted
                 playsInline
                 preload="auto"
                 onTimeUpdate={handleTimeUpdate}
@@ -381,7 +360,7 @@ export function EntrenamientoPersonalizado() {
           </div>
 
           {/* Right: Content */}
-          <div 
+          <div
             className="w-full lg:w-1/2 transition-all duration-700"
             style={{
               opacity: inView ? 1 : 0,
@@ -394,11 +373,11 @@ export function EntrenamientoPersonalizado() {
                 La Solución
               </span>
             </div>
-            
+
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Entrenamiento que se adapta a vos
             </h2>
-            
+
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
               Ningún cuerpo es igual. Cada cliente recibe un plan completamente personalizado basado en sus objetivos únicos, horarios y preferencias. Esta no es una rutina genérica — es tu mapa personal hacia la transformación.
             </p>
@@ -407,9 +386,6 @@ export function EntrenamientoPersonalizado() {
               {[
                 'Planes de entrenamiento personalizados que se adaptan a tu progreso.',
                 'Guía de nutrición flexible — sin dietas restrictivas.',
-                'Llamadas de seguimiento uno a uno para mantener tu disciplina.',
-                'Soporte 24/7 a través de nuestro equipo.',
-                'Métodos respaldados por la ciencia que garantizan resultados a largo plazo.'
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-600/20 flex items-center justify-center mt-0.5">

@@ -29,7 +29,7 @@ const disciplinas = [
   {
     id: 3,
     name: 'Clases de Glúteos',
-    description: 'Programas específicos para tonificar y fortalecer. Clases dinámicas con música motivadora dirigidas por expertos.',
+    description: 'Programas específicos para tonificar y fortalecer. Clases dinámicas, enfocadas y con resultados visibles.',
     icon: Heart,
     color: 'from-red-600 to-orange-500',
     image: gluteosImg,

@@ -1,9 +1,9 @@
 import { Navbar } from "../components/navbar"
 import { Footer } from "../components/footer"
-import { Dumbbell, Users, Heart, Wind } from 'lucide-react'
+import { Dumbbell, Users, Heart, Wind, Play, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-
+import demoVideo from '../assets/videoLanding.mp4'
 import musculacionImg from '../assets/musculacion.png';
 import gluteosImg from '../assets/clasegluteos.png';
 import stretchingImg from '../assets/stretching.png';
@@ -51,10 +51,22 @@ const disciplinasData = [
 
 export function Disciplinas() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
+
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedVideo])
 
   return (
     <main className="min-h-screen bg-background">
@@ -133,9 +145,16 @@ export function Disciplinas() {
                         {disciplina.description}
                       </p>
 
-                      {/* Learn More Button */}
-                      <button className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-                        Comenzar
+                      {/* Video Button */}
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setSelectedVideo(demoVideo)
+                        }}
+                        className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
+                      >
+                        <Play className="w-4 h-4 fill-black" />
+                        Ver Ejercicios
                       </button>
                     </div>
                   </div>
@@ -147,6 +166,34 @@ export function Disciplinas() {
       </section>
 
       <Footer />
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 text-left">
+          <div 
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-pointer"
+            onClick={() => setSelectedVideo(null)}
+          />
+          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
+            <button 
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-red-600 rounded-full text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="aspect-video bg-gray-900 w-full relative">
+              <video 
+                src={selectedVideo} 
+                controls 
+                autoPlay 
+                className="w-full h-full object-cover"
+                controlsList="nodownload"
+                playsInline
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }

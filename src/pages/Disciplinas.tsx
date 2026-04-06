@@ -4,9 +4,10 @@ import { Dumbbell, Users, Heart, Wind } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 
-import musculacionImg from '../assets/musculacion.jpg';
-import gluteosImg from '../assets/gluteos.jpg';
-import stretchingImg from '../assets/stretching.jpg';
+import musculacionImg from '../assets/musculacion.png';
+import gluteosImg from '../assets/clasegluteos.png';
+import stretchingImg from '../assets/stretching.png';
+import calisteniaImg from '../assets/calistenia.png';
 
 
 const disciplinasData = [
@@ -25,7 +26,7 @@ const disciplinasData = [
     description: 'Ejercicios de peso corporal con resultados excepcionales. Domina tu propio cuerpo y alcanza nuevos niveles de control.',
     icon: Users,
     color: 'from-red-700 to-red-600',
-    image: musculacionImg,
+    image: calisteniaImg,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {

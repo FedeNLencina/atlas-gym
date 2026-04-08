@@ -3,7 +3,6 @@
 
 import { Dumbbell, Users, Heart, Wind, Play, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import demoVideo from '../assets/videoLanding.mp4';
 import musculacionImg from '../assets/musculacion.png';
@@ -49,7 +48,6 @@ const disciplinas = [
 export function Disciplinas() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (selectedVideo) {
@@ -149,22 +147,22 @@ export function Disciplinas() {
       {/* Video Modal */}
       {selectedVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 text-left">
-          <div 
+          <div
             className="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-pointer"
             onClick={() => setSelectedVideo(null)}
           />
           <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
-            <button 
+            <button
               onClick={() => setSelectedVideo(null)}
               className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-red-600 rounded-full text-white transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
             <div className="aspect-video bg-gray-900 w-full relative">
-              <video 
-                src={selectedVideo} 
-                controls 
-                autoPlay 
+              <video
+                src={selectedVideo}
+                controls
+                autoPlay
                 className="w-full h-full object-cover"
                 controlsList="nodownload"
                 playsInline

@@ -77,10 +77,9 @@ export function Disciplinas() {
             return (
               <div
                 key={disciplina.id}
-                className="group relative h-96 rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative h-96 rounded-2xl overflow-hidden"
                 onMouseEnter={() => setHoveredId(disciplina.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                onClick={() => navigate('/disciplinas')}
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -112,13 +111,14 @@ export function Disciplinas() {
                     </h3>
 
                     {/* Description - Appears on Hover */}
-                    <p className={`text-white text-sm leading-relaxed transition-all duration-500 line-clamp-2 ${isHovered ? 'opacity-100 line-clamp-none' : 'opacity-80'}`}>
+                    <p className={`text-white text-sm leading-relaxed transition-all duration-500 ${isHovered ? 'opacity-100 line-clamp-none' : 'opacity-100 line-clamp-none lg:opacity-80 lg:line-clamp-2'}`}>
                       {disciplina.description}
                     </p>
 
                     {/* Action Button */}
                     <button
-                      className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+                      onClick={() => navigate('/disciplinas')}
+                      className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2 lg:pointer-events-none'}`}>
                       <span>Ver más detalles</span>
                       <ArrowRight className="w-4 h-4 text-black" />
                     </button>

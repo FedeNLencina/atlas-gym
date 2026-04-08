@@ -3,11 +3,15 @@ import { Footer } from "../components/footer"
 import { Dumbbell, Users, Heart, Wind, Play, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-import demoVideo from '../assets/videoLanding.mp4'
 import musculacionImg from '../assets/musculacion.png';
 import gluteosImg from '../assets/clasegluteos.png';
 import stretchingImg from '../assets/stretching.png';
 import calisteniaImg from '../assets/calistenia.png';
+
+import musculacionVideo from '../assets/musculacion.mp4';
+import calisteniaVideo from '../assets/calistenia.mp4';
+import gluteosVideo from '../assets/gluteos.mp4';
+import stretchingVideo from '../assets/streching.mp4';
 
 
 const disciplinasData = [
@@ -18,6 +22,7 @@ const disciplinasData = [
     icon: Dumbbell,
     color: 'from-red-600 to-red-500',
     image: musculacionImg,
+    video: musculacionVideo,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -27,6 +32,7 @@ const disciplinasData = [
     icon: Users,
     color: 'from-red-700 to-red-600',
     image: calisteniaImg,
+    video: calisteniaVideo,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -36,6 +42,7 @@ const disciplinasData = [
     icon: Heart,
     color: 'from-red-600 to-orange-500',
     image: gluteosImg,
+    video: gluteosVideo,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -45,6 +52,7 @@ const disciplinasData = [
     icon: Wind,
     color: 'from-red-700 to-red-600',
     image: stretchingImg,
+    video: stretchingVideo,
     lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
@@ -149,7 +157,7 @@ export function Disciplinas() {
                       <button 
                         onClick={(e) => {
                           e.stopPropagation()
-                          setSelectedVideo(demoVideo)
+                          setSelectedVideo(disciplina.video)
                         }}
                         className={`mt-6 px-6 py-2 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-red-50 transition-all duration-500 transform ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
                       >
@@ -174,14 +182,14 @@ export function Disciplinas() {
             className="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-pointer"
             onClick={() => setSelectedVideo(null)}
           />
-          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
+          <div className="relative w-full max-w-[360px] sm:max-w-[400px] md:max-w-[450px] mx-auto h-[85vh] sm:h-[90vh] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
             <button 
               onClick={() => setSelectedVideo(null)}
               className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-red-600 rounded-full text-white transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="aspect-video bg-gray-900 w-full relative">
+            <div className="w-full h-full bg-gray-900 relative">
               <video 
                 src={selectedVideo} 
                 controls 

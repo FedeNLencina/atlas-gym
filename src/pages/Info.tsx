@@ -39,7 +39,7 @@ export function Info() {
           <div className="mt-16 mb-6">
             <h2 className="text-4xl font-bold text-center text-white mb-12">Nuestras Tarifas</h2>
             <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-              
+
               {/* Card 1: Musculación Libre */}
               <div className="relative group rounded-2xl border border-white/10 bg-gray-900/40 p-8 shadow-2xl overflow-hidden hover:border-red-500/50 transition-all duration-500 hover:bg-gray-900/80 flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -72,7 +72,7 @@ export function Info() {
                 <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <h3 className="text-xl font-medium text-red-400 mb-2">Personalizados</h3>
                 <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-4xl font-bold text-white">$500.000</span>
+                  <span className="text-4xl font-bold text-white">$50.000</span>
                   <span className="text-gray-400">/mes</span>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed flex-grow">

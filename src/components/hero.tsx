@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom";
 import { ArrowDown } from 'lucide-react';
-import { useFlag } from '@unleash/proxy-client-react';
 
 export function Hero() {
   const scrollToDisciplinas = (e: React.MouseEvent) => {
@@ -10,9 +9,7 @@ export function Hero() {
     const element = document.getElementById('disciplinas');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
-  const enabled = useFlag('Promos');
-  const isEnabled = enabled ? 'Flag is enabled' : 'Flag is disabled'
-  console.log(" isEnabled: ", isEnabled)
+
   return (
     <section className="min-h-screen bg-gradient-to-b from-black via-black to-red-950/20 pt-20 flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Elements */}
